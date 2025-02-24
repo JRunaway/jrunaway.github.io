@@ -1,62 +1,44 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Интерьер Дизайн</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галерея</title>
+  <!-- Подключаем внешний файл стилей -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">ЛОГО</div>
-        <button class="menu-button">Меню</button>
-    </header>
-    
-    <section class="hero">
-        <img src="interior-main.jpg" alt="Интерьер" class="hero-image">
-    </section>
-    
-    <section class="about">
-        <img src="designer.jpg" alt="Дизайнер" class="about-image">
-        <p>Создавая интерьеры, тестируем эргономику, анализируем и сопоставляем все решения на каждом этапе проектирования. Пишем историю будущего пространства вместе.</p>
-    </section>
-    
-    <section class="steps">
-        <h2>Этапы работы</h2>
-        <ul>
-            <li>Диалог</li>
-            <li>Поиск планировочного решения</li>
-            <li>Создание концепции интерьера</li>
-            <li>Разработка проекта</li>
-            <li>Наполнение интерьера</li>
-            <li>Авторское сопровождение строительного процесса</li>
-        </ul>
-    </section>
-    
-    <section class="gallery">
-        <h2>Частные интерьеры</h2>
-        <div class="gallery-grid">
-            <img src="1.jpg" alt="Частный интерьер">
-            <img src="1.jpg" alt="Частный интерьер">
-            <img src="1.jpg" alt="Частный интерьер">
-            <img src="1.jpg" alt="Частный интерьер">
-            <img src="1.jpg" alt="Частный интерьер">
-        </div>
+  <!-- Шапка сайта с логотипом и навигацией -->
+  <header>
+	<img src="1.png" alt="Логотип" class="logo">
+	<div class="hamburger-menu">
+		<input id="menu__toggle" type="checkbox" />
+		<label class="menu__btn" for="menu__toggle">
+			<span></span>
+		</label>
 
-        <h2>Общественные интерьеры</h2>
-        <div class="gallery-grid">
-            <img src="public1.jpg" alt="Общественный интерьер">
-            <img src="public2.jpg" alt="Общественный интерьер">
-            <img src="public3.jpg" alt="Общественный интерьер">
-            <img src="public4.jpg" alt="Общественный интерьер">
-            <img src="public5.jpg" alt="Общественный интерьер">
-        </div>
-    </section>
-    
-    <footer>
-        <p>Украина, Одесса</p>
-        <p>0964660658</p>
-        <p><a href="mailto:mailtogoncharova@gmail.com">mailtogoncharova@gmail.com</a></p>
-    </footer>
+		<ul class="menu__box">
+			<li><a class="menu__item" href="index.html">Главная</a></li>
+			<li><a class="menu__item" href="#">Проекты</a></li>
+			<li><a class="menu__item" href="#">Команда</a></li>
+			<li><a class="menu__item" href="#">Блог</a></li>
+			<li><a class="menu__item" href="contacts.html">Контакты</a></li>
+		</ul>
+	</div>
+  </header>
+
+  <h1>Галерея</h1>
+  <!-- Блок с галереей изображений -->
+  <div class="gallery">
+    <img src="1.jpg" alt="Изображение 1">
+    <img src="1.jpg" alt="Изображение 2">
+    <img src="1.jpg" alt="Изображение 3">
+    <img src="1.jpg" alt="Изображение 4">
+    <img src="1.jpg" alt="Изображение 5">
+    <img src="1.jpg" alt="Изображение 6">
+  </div>
+
+  <!-- Подключаем внешний JavaScript-файл -->
+  <script src="script.js"></script>
 </body>
 </html>
