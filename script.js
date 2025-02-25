@@ -77,3 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Добавим обработчик события на checkbox, чтобы добавлять и убирать класс menu-open у body
+document.getElementById('menu__toggle').addEventListener('change', function() {
+  if (this.checked) {
+    document.body.classList.add('menu-open');
+  } else {
+    document.body.classList.remove('menu-open');
+  }
+});
