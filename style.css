@@ -8,35 +8,89 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
-/* Стили для шапки сайта */
+/* Стили для header */
 header {
-  background-color: #b8b6b6;
+  background: url('11.jpg') no-repeat center center/cover; /* Фоновая картинка, no-repeat center center/cover обеспечивает, что картинка не повторяется, центрируется и растягивается на весь блок */
+  height: 100vh; /* Высота на весь экран */
   color: #fff;
-  padding: 10px 20px;
+  padding: 0; /* Убираем padding, чтобы картинка растянулась */
+  position: relative; /* Для позиционирования дочерних элементов */
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Чтобы кнопка была справа */
-  position: relative;
+  justify-content: center; /* Центрируем содержимое */
 }
+
+/* Контейнер для содержимого header */
+.header-content {
+  width: 100%;
+  padding: 20px; /* Внутренний отступ для логотипа и меню */
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение элементов */
+  align-items: center; /* Центрируем по горизонтали */
+}
+
+
 
 .logo {
   width: 30%;
+  position: absolute;
+  top: 20px; /* Отступ сверху */
+  left: 20px; /* Отступ слева */
 }
+
+/* Приветственная надпись */
+.welcome-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрируем по горизонтали и вертикали */
+  font-size: 48px; /* Размер текста */
+  font-weight: bold;
+  text-align: center;
+  color: #fff; /* Цвет текста */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень для читаемости */
+  animation: fadeIn 2s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 
 @media (max-width: 768px) {
   .logo {
     width: 35%; /* */
+	top: 15px;
+    left: 15px;
+  }
+  .menu__btn {
+    top: 15px;
+    right: 15px;
+  }
+  .welcome-text {
+    font-size: 42px; /* Уменьшаем текст на планшетах */
   }
 }
 
 @media (max-width: 431px) {
   .logo {
-    width: 35%; /* */
+    width: 35%;
+    top: 10px;
+    left: 10px;
+  }
+  .menu__btn {
+    top: 10px;
+    right: 10px;
+  }
+  .welcome-text {
+    font-size: 40px;
   }
 }
+
+
 
 /* навигация и кнопка */
 #menu__toggle {
@@ -59,18 +113,21 @@ header {
   right: 0; /* выезд меню справа, так же изменить в .menu__box { */
 }
 
+body.menu-open {
+  overflow: hidden; /* чтобы убрать прокрутку у body при наличии класса menu-open */
+}
+
+
+
 .menu__btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%); /* Центрируем кнопку по вертикали */
+  top: 20px; /* Отступ сверху */
+  right: 20px; /* Отступ справа */
   width: 26px;
   height: 26px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 1002; /* Оставляем высокий z-index */
+  transform: none; /* Убираем центрирование по вертикали */
 }
 
 .menu__btn > span,
@@ -96,24 +153,21 @@ header {
 }
 
 .menu__box {
-  display: block;
   position: fixed;
   visibility: hidden;
   top: 0;
   right: -100%; /* выезд меню справа, так же изменить в #menu__toggle:checked ~ .menu__box   */
+  width: 100%;
   text-align: right;
-  width: 300px;
   height: 100%;
-
   margin: 0;
   padding: 80px 0;
-
   list-style: none;
-
   background-color: #ECEFF1;
   box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-
   transition-duration: .25s;
+  overflow-y: auto;
+  z-index: 998;
 }
 
 .menu__item {
@@ -178,5 +232,8 @@ h1 {
 @media (max-width: 431px) {
   .gallery {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .gallery img {
+    width: 95%;
   }
 }
